@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FitnessRandomizer</string>
+    <string name="btn_start_workout">Start Workout</string>
+    <string name="workout_standing_still">Standing Still</string>
+</resources>
