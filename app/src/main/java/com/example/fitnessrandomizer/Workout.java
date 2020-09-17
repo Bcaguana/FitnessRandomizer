@@ -1,11 +1,22 @@
 package com.example.fitnessrandomizer;
 
+import android.content.res.Resources;
+
 public class Workout {
     String name;
     String muscle;
     int reps;
-    int time;
+    int timeSeconds;
     String imgUrl;
+    int res = R.drawable.ic_baseline_accessibility_24;
+
+    public Workout(String name, String muscle, int reps, int time) {
+        this.name = name;
+        this.muscle = muscle;
+        this.reps = reps;
+        this.timeSeconds = time;
+        //this.imgUrl = imgUrl;
+    }
 
     public String getName() {
         return name;
@@ -31,12 +42,12 @@ public class Workout {
         this.reps = reps;
     }
 
-    public int getTime() {
-        return time;
+    public int getTimeSeconds() {
+        return timeSeconds;
     }
 
-    public void setTime(int time) {
-        this.time = time;
+    public void setTimeSeconds(int time) {
+        this.timeSeconds = time;
     }
 
     public String getImgUrl() {
@@ -45,5 +56,13 @@ public class Workout {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public int getImgRes(){
+        return this.res;
+    }
+
+    public void setImgRes(int res){
+        this.res = res;
     }
 }

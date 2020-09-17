@@ -27,8 +27,24 @@
             android:textSize="20sp"
             android:layout_toEndOf="@+id/imgWorkoutVector"
             android:layout_alignParentTop="true"
-            android:text="@string/workout_standing_still"
-            />
+            android:text="@string/workout_standing_still" />
+
+        <TextView
+            android:id="@+id/txtMuscleLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtWorkoutName"
+            android:layout_toEndOf="@+id/imgWorkoutVector"
+            android:text="@string/muscles_label" />
+
+        <TextView
+            android:id="@+id/txtMuscle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/txtMuscleLabel"
+            android:layout_alignBottom="@+id/txtMuscleLabel"
+            android:layout_toEndOf="@+id/txtMuscleLabel"
+            android:text="@string/muscle_label_filler" />
 
 
     </RelativeLayout>

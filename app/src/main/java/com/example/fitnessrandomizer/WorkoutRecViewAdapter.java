@@ -26,7 +26,7 @@ public class WorkoutRecViewAdapter extends RecyclerView.Adapter<WorkoutRecViewAd
 
     public WorkoutRecViewAdapter(Context mContext, String parentActivity) {
         this.mContext = mContext;
-        this.parentActivity =parentActivity;
+        this.parentActivity = parentActivity;
     }
 
     @NonNull
@@ -41,6 +41,8 @@ public class WorkoutRecViewAdapter extends RecyclerView.Adapter<WorkoutRecViewAd
         //Set View contents (e.g set Workout Name TextView to hold the given name of the workout)
         Log.d(TAG, "onBindViewHolder: Built");
         holder.txtWorkoutName.setText(workouts.get(position).getName());
+        holder.imgWorkout.setImageResource(workouts.get(position).getImgRes());
+        holder.txtWorkoutMuscle.setText(workouts.get(position).getMuscle());
         /* Would look up workout image if it was online
         Glide.with(mContext)
         .asBitmap()
@@ -50,14 +52,17 @@ public class WorkoutRecViewAdapter extends RecyclerView.Adapter<WorkoutRecViewAd
     }
 
     @Override
-    public int getItemCount() {
-        return 0;
+    public int getItemCount() { return workouts.size(); }
+
+    public void setWorkouts(ArrayList<Workout> workouts){
+        this.workouts = workouts;
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         CardView parent;
         ImageView imgNavArrow, imgWorkout;
-        TextView txtWorkoutName;
+        TextView txtWorkoutName, txtWorkoutMuscle;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -65,7 +70,7 @@ public class WorkoutRecViewAdapter extends RecyclerView.Adapter<WorkoutRecViewAd
             imgNavArrow = itemView.findViewById(R.id.imgNavArrow);
             imgWorkout = itemView.findViewById(R.id.imgWorkoutVector);
             txtWorkoutName = itemView.findViewById(R.id.txtWorkoutName);
-
+            txtWorkoutMuscle = itemView.findViewById(R.id.txtMuscle);
         }
     }
 }
