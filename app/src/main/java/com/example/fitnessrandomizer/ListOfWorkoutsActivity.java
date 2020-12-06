@@ -33,8 +33,8 @@ public class ListOfWorkoutsActivity extends AppCompatActivity {
     }
 
     private void setWorkouts() {
-        workouts.add(new Workout("Standing", "Whole Body", 10, 300));
-        workouts.add(new Workout("Standing Harder", "Whole Body", 20, 600));
-        workouts.add(new Workout("T-Pose", "Brain", 100, 3000));
+        workouts.add(new Workout("Standing", "Whole Body", 10, 300, 1));
+        workouts.add(new Workout("Standing Harder", "Whole Body", 20, 600, 2));
+        workouts.add(new Workout("T-Pose", "Brain", 100, 3000, 3));
     }
 }

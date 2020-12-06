@@ -9,13 +9,15 @@ public class Workout {
     int timeSeconds;
     String imgUrl;
     int res = R.drawable.ic_baseline_accessibility_24;
+    int id;
 
-    public Workout(String name, String muscle, int reps, int time) {
+    public Workout(String name, String muscle, int reps, int time, int id) {
         this.name = name;
         this.muscle = muscle;
         this.reps = reps;
         this.timeSeconds = time;
         //this.imgUrl = imgUrl;
+        this.id = id;
     }
 
     public String getName() {
@@ -64,5 +66,13 @@ public class Workout {
 
     public void setImgRes(int res){
         this.res = res;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

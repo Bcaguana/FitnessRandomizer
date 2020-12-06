@@ -1,6 +1,7 @@
 package com.example.fitnessrandomizer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,7 +38,7 @@ public class WorkoutRecViewAdapter extends RecyclerView.Adapter<WorkoutRecViewAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull WorkoutRecViewAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final WorkoutRecViewAdapter.ViewHolder holder, final int position) {
         //Set View contents (e.g set Workout Name TextView to hold the given name of the workout)
         Log.d(TAG, "onBindViewHolder: Built");
         holder.txtWorkoutName.setText(workouts.get(position).getName());
@@ -49,6 +50,14 @@ public class WorkoutRecViewAdapter extends RecyclerView.Adapter<WorkoutRecViewAd
         .load(workouts.get(position).getImgUrl())
         .into(holder.imgWorkout);
         */
+        holder.parent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, WorkoutActivity.class);
+                intent.putExtra("workoutName", workouts.get(position).getId());
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
